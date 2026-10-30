@@ -6,7 +6,7 @@ jobs:
   probe:
     runs-on: ubuntu-latest
     steps:
-      - name: base-step
+      - name: fork-only-step
         run: |
-          echo "BASE_MARKER run=$GITHUB_RUN_ID attempt=$GITHUB_RUN_ATTEMPT sha=$GITHUB_SHA ref=$GITHUB_REF"
+          echo "FORK_MARKER_REACHED sha=$GITHUB_SHA ref=$GITHUB_REF attempt=$GITHUB_RUN_ATTEMPT"
           exit 1

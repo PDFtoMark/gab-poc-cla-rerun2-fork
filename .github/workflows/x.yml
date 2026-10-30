@@ -1,0 +1,12 @@
+name: prt-rerun-probe
+on:
+  pull_request_target:
+    types: [opened, synchronize]
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - name: base-step
+        run: |
+          echo "BASE_MARKER run=$GITHUB_RUN_ID attempt=$GITHUB_RUN_ATTEMPT sha=$GITHUB_SHA ref=$GITHUB_REF"
+          exit 1
